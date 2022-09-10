@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { shuffle } from "lodash";
 import useSpotify from "../hooks/useSpotify";
 import {useRecoilState,useRecoilValue} from 'recoil'
-import {playlistIdState, playlistState} from '../atoms/playlistAtom'
+import {  playlistIdState, playlistState} from '../atoms/playlistAtom'
 import Songs from '../components/Songs'
 const colors=[
     "from-indigo-500",
@@ -29,9 +29,9 @@ function Center() {
                 setPlaylist(data.body)
             }).catch((err)=>console.log("Something went wrong",err))
         },[spotifyApi,playlistId])
-        console.log(playlist);
+        // console.log(playlist);
     return (
-        <div className='flex-grow '>
+        <div className='flex-grow scrollbar-hide h-screen overflow-y-scroll'>
             <h1></h1>
             <header className="absolute right-8 top-5">
                 <div className="flex items-center bg-black space-x-3 opacity-90 hover:opacity-80 cursor-pointer rounded-full p-1 pr-2 text-white">

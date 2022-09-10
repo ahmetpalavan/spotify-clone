@@ -7,7 +7,7 @@ try {
     spotifyApi.setAccessToken(token.accessToken)
     spotifyApi.setRefresToken(token.refreshToken)
     const {body: refreshedToken}= await spotifyApi.refreshAccessToken();
-    console.log('REFRESHED IS TOKEN', refreshedToken);
+    // console.log('REFRESHED IS TOKEN', refreshedToken);
     return {
     ...token,
     accessToken: refreshedToken.access_token,
